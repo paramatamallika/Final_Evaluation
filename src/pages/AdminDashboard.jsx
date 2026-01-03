@@ -43,7 +43,6 @@ function AdminDashboard() {
     alert("Restaurant Added Successfully");
   };
 
-  // ❌ DELETE RESTAURANT
   const deleteRestaurant = (id) => {
     const confirmDelete = window.confirm(
       "Are you sure you want to delete?"
@@ -55,7 +54,6 @@ function AdminDashboard() {
     alert("Restaurant Deleted");
   };
 
-  // ✏️ UPDATE RESTAURANT
   const updateRestaurant = (id, updatedData) => {
     const updated = restaurants.map((r) =>
       r.restaurantID === id ? { ...r, ...updatedData } : r
@@ -66,7 +64,7 @@ function AdminDashboard() {
 
   return (
     <div style={{ display: "flex" }}>
-      {/* 🔹 SIDEBAR */}
+  
       <div
         style={{
           width: "260px",
@@ -78,7 +76,7 @@ function AdminDashboard() {
         <RestaurantForm addRest={addRest} />
       </div>
 
-      {/* 🔹 MAIN CONTENT */}
+
       <div style={{ flex: 1, padding: "10px" }}>
         <Navbar
           searchText={searchText}
@@ -99,7 +97,7 @@ function AdminDashboard() {
                 rest={r}
                 isAdmin={true}
                 onDelete={deleteRestaurant}
-                onUpdate={updateRestaurant} // <-- pass update function
+                onUpdate={updateRestaurant} 
               />
             ))
           )}
