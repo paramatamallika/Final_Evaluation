@@ -11,7 +11,6 @@ function AdminDashboard() {
   const [typeFilter, setTypeFilter] = useState("");
   const [parkingFilter, setParkingFilter] = useState("");
 
-  // 🔍 FILTER + SEARCH LOGIC
   const filteredRestaurants = restaurants.filter((r) => {
     const searchMatch =
       r.restaurantName.toLowerCase().includes(searchText.toLowerCase()) ||
@@ -27,7 +26,6 @@ function AdminDashboard() {
     return searchMatch && typeMatch && parkingMatch;
   });
 
-  // ➕ ADD RESTAURANT
   const addRest = (data) => {
     if (!data.restaurantName || !data.address) {
       alert("All fields required");
